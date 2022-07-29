@@ -1,0 +1,8 @@
+server: irc.libera.chat:+6697
+nickname: wallops
+log-channel: "#services"
+database: .wallops.db
+
+sasl:
+  username: wallops
+  password: hunter2
