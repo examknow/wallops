@@ -17,3 +17,16 @@ class Database(object):
                 VALUES (?, ?, ?, ?)
             """, [content, sender, server, int(time())])
             await db.commit()
+
+    async def add_global(self,
+            content: str,
+            sender: str,
+            server: str):
+
+        async with aiosqlite.connect(self._db_location) as db:
+            await db.execute("""
+                INSERT INTO globals
+                (content, sender, server, ts)
+                VALUES (?, ?, ?, ?)
+            """, [content, sender, server, int(time())])
+            await db.commit()

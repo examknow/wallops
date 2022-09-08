@@ -34,6 +34,15 @@ class Server(BaseServer):
             await self._log(f"got wallop from \x02{line.source}\x02 - it says: {line.params[0]}")
             await self._database.add_wallop(line.params[0], line.source, self._server_name)
 
+        elif (
+            line.command == "NOTICE"
+            and line.params[0] == "$$*"
+        ):
+
+            # solanum global notice
+            await self._log(f"got global notice from \x02{line.source}\x02 - it says: {line.params[1]}")
+            await self._database.add_global(line.params[1], line.source, self._server_name)
+
     def line_preread(self, line: Line):
         print(f"< {line.format()}")
     def line_presend(self, line: Line):

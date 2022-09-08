@@ -7,4 +7,11 @@ CREATE TABLE wallops (
     server  TEXT NOT NULL,
     ts      INTEGER NOT NULL
 );
+CREATE TABLE globals (
+    id      INTEGER PRIMARY KEY,
+    content TEXT NOT NULL,
+    sender  TEXT NOT NULL,
+    server  TEXT NOT NULL,
+    ts      INTEGER NOT NULL
+);
 COMMIT;

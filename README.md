@@ -1,6 +1,7 @@
 # wallops
 
-Bot to record all `WALLOPS` recieved on an IRC server
+Bot to record all `WALLOPS` and global notices
+recieved on an IRC server
 
 ## setup
 
